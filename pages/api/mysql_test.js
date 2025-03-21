@@ -1,5 +1,5 @@
 import config from '../../config/mysql';
-var mysql = require('mysql');
+var mysql = require('mysql2');
 
 export default function handler(req, res) {
     var statements = "SELECT * FROM items;";

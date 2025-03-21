@@ -1,5 +1,5 @@
 import config from '../../config/mysql';
-var mysql = require('mysql');
+var mysql = require('mysql2');
 var fs = require('fs');
 var readline = require('readline');
 
@@ -25,11 +25,12 @@ const sqlToString = async (path = "") => {  //convert sql file into string
 
 export default function handler(req, res) {
     var con = mysql.createConnection(config);
-
+    console.log("con", con);
     con.connect(function (err) {
         if (err) {
-            res.status(401).json({ err: err });
-        };
+            console.error("Database connection failed:", err);
+            return res.status(500).json({ error: "Failed to connect to the database" });
+        }
         con.query("SHOW TABLES;", function (err, result) {
             if (err) { res.status(401).json({ err: err }); };
             if (result.length === 0) {
