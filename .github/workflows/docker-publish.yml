@@ -13,11 +13,11 @@ jobs:
       - name: Checkout du code
         uses: actions/checkout@v4
 
-      - name: Se connecter à GHCR
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-
+      - name: Définir le nom de l'image en minuscule
+        run: echo "IMAGE_NAME=ghcr.io/$(echo ${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]')/todolist:latest" >> $GITHUB_ENV
+      
       - name: Construire l'image Docker
-        run: docker build -t ghcr.io/${{ github.repository_owner }}"/todolist:latest" | tr '[:upper:]' '[:lower:]'
-
+        run: docker build -t $IMAGE_NAME .
+      
       - name: Pusher l'image vers GHCR
-        run: docker push ghcr.io/${{ github.repository_owner }}/todolist:latest
+        run: docker push $IMAGE_NAME
