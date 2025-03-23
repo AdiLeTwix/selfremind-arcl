@@ -1,0 +1,23 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v4
+
+      - name: Se connecter à GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Construire l'image Docker
+        run: docker build -t ghcr.io/${{ github.repository_owner }}/todolist:latest .
+
+      - name: Pusher l'image vers GHCR
+        run: docker push ghcr.io/${{ github.repository_owner }}/todolist:latest
