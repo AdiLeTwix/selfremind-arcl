@@ -17,6 +17,7 @@
     "@mui/icons-material": "^5.2.5",
     "@mui/material": "^5.2.5",
     "axios": "^0.25.0",
+    "dotenv": "^16.4.7",
     "framer-motion": "^5",
     "iron-session": "^6.0.5",
     "moment": "^2.29.4",
