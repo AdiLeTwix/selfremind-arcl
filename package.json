@@ -16,6 +16,7 @@
     "@emotion/styled": "^11",
     "@mui/icons-material": "^5.2.5",
     "@mui/material": "^5.2.5",
+    "@next/env": "^15.3.0",
     "axios": "^0.25.0",
     "dotenv": "^16.4.7",
     "framer-motion": "^5",

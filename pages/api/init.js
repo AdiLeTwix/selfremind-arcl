@@ -25,7 +25,6 @@ const sqlToString = async (path = "") => {  //convert sql file into string
 
 export default function handler(req, res) {
     var con = mysql.createConnection(config);
-    console.log("con", con);
     con.connect(function (err) {
         if (err) {
             console.error("Database connection failed:", err);
