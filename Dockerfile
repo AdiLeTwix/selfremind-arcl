@@ -1,16 +1,15 @@
-FROM node:14.18
+FROM node:14-alpine
 
-RUN mkdir -p /home/app/ && chown -R node:node /home/app
+RUN mkdir -p /home/app && chown -R node:node /home/app
 WORKDIR /home/app
 
-# for product ver
 COPY --chown=node:node . .
 
 USER node
 
-# for product ver
-RUN yarn install --frozen-lockfile
-RUN yarn build
+RUN yarn install --frozen-lockfile --production && \
+    yarn cache clean && \
+    yarn build
 
 EXPOSE 3000
-CMD [ "yarn" , "start"]
+CMD ["yarn", "start"]
