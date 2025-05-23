@@ -64,7 +64,7 @@ export default function MenuBar() {
                 <Center h="100%" p={4}>
                     <Link href={"/"}>
                         <a>
-                            <Text fontSize='xl' as='b'>SelfRemind</Text>
+                            <Text fontSize='xl' as='b'>Chop1Hour - ARCL</Text>
                         </a>
                     </Link>
                 </Center>

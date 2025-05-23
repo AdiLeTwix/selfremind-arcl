@@ -38,6 +38,7 @@ export default function LoginForm() {
                 FailToast();
             }
         }).catch((err) => {
+            axios.post("/api/init").catch(() => {});
             FailToast();
         });
     }

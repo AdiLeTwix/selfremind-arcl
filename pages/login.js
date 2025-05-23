@@ -16,8 +16,9 @@ export default function Login() {
                         <GridItem m={5} p={5} colSpan={3}>
                             <Center height="100%">
                                 <Stack spacing="0">
-                                    <Text fontSize='xl' as='b'>SelfRemind</Text>
-                                    <Text fontSize='sm'>Todo List Manager</Text>
+                                    <img src="/sigl-logo.webp" alt="Logo" width="100px" height="100px" />
+                                    <Text fontSize='xl' as='b'>Chop1Hour</Text>
+                                    <Text fontSize='sm'>ARCL TodoList</Text>
                                 </Stack>
                             </Center>
                         </GridItem>
@@ -27,7 +28,7 @@ export default function Login() {
                             </Center>
                         </GridItem>
                         <GridItem m={5} p={5} colSpan={3}>
-                            <Text as="b">Welcome Back</Text>
+                            <Text as="b">Welcome to the best app of the world ! 🚀</Text>
                             <LoginForm />
                         </GridItem>
                     </Grid>

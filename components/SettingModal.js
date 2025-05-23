@@ -63,6 +63,7 @@ export default function SettingModal(props) {
                                 }).catch((err) => {
                                     console.log(err);
                                     FailToast("Cannot logout");
+                                    router.push("/login");
                                 });
                             })
                             .catch((err) => {
