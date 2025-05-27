@@ -8,8 +8,7 @@ COPY --chown=node:node . .
 USER node
 
 RUN yarn install --frozen-lockfile --production && \
-    yarn cache clean && \
-    yarn build
+    yarn cache clean
 
 EXPOSE 3000
-CMD ["yarn", "start"]
+CMD ["yarn", "build", "&&", "yarn", "start"]
