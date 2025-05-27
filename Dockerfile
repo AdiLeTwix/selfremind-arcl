@@ -11,4 +11,4 @@ RUN yarn install --frozen-lockfile --production && \
     yarn cache clean
 
 EXPOSE 3000
-CMD ["yarn", "build", "&&", "yarn", "start"]
+CMD ["sh", "-c", "yarn build && yarn start"]
